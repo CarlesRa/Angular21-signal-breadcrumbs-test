@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ProductsBase } from './products-base';
+import { EmptyBox } from './empty-box';
 
-describe('ProductsBase', () => {
-  let component: ProductsBase;
-  let fixture: ComponentFixture<ProductsBase>;
+describe('EmptyBox', () => {
+  let component: EmptyBox;
+  let fixture: ComponentFixture<EmptyBox>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ProductsBase]
+      imports: [EmptyBox]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ProductsBase);
+    fixture = TestBed.createComponent(EmptyBox);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });

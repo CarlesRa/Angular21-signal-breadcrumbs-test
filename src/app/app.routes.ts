@@ -14,7 +14,7 @@ export const routes: Routes = [
       {
         title: 'Products',
         path: 'products',
-        loadComponent: () => import('./components/pages/products-base/products-base').then(mod => mod.ProductsBase),
+        loadComponent: () => import('./components/shared/empty-box/empty-box').then(mod => mod.EmptyBox),
         data: {
           breadcrumb: 'Products'
         },
@@ -24,15 +24,31 @@ export const routes: Routes = [
             loadComponent: () => import('./components/pages/products/products').then(mod => mod.Products),
             data: {
               breadcrumb: null
-            }          
+            }
           },
           {
             title: 'Laptops',
             path: 'laptops',
-            loadComponent: () => import('./components/pages/laptops/laptops').then(mod => mod.Laptops),
+            loadComponent: () => import('./components/shared/empty-box/empty-box').then(mod => mod.EmptyBox),
             data: {
               breadcrumb: 'Laptops'
-            }
+            }, children: [
+              {
+                path: '',
+                loadComponent: () => import('./components/pages/laptops/laptops').then(mod => mod.Laptops),
+                data: {
+                  breadcrumb: null // TODO: ADD A CONST TO MORE EXPLICIT EX: SKIP_BREADCRUMB
+                }
+              },
+              {
+                title: 'Laptop information',
+                path: ':id',
+                loadComponent: () => import('./components/pages/laptop-detail/laptop-detail').then(mod => mod.LaptopDetail),
+                data: {
+                  breadcrumb: 'Laptop details'
+                }
+              }
+            ]
           },
         ]
       },
