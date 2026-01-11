@@ -54,7 +54,7 @@ export class BreadcrumbService {
     this.navigationEnd();
 
     // Build the breadcrumb trail starting from the root of the router state
-    return this.buildBreadCrumbs(this.router.routerState.snapshot.root);
+    return this.buildBreadcrumbs(this.router.routerState.snapshot.root);
   });
 
   /**
@@ -67,7 +67,7 @@ export class BreadcrumbService {
    * @param route Root route snapshot to start building breadcrumbs from
    * @returns Array of `BreadcrumbItem` representing the navigation hierarchy
    */
-  private buildBreadCrumbs(route: ActivatedRouteSnapshot): BreadcrumbItem[] {
+  private buildBreadcrumbs(route: ActivatedRouteSnapshot): BreadcrumbItem[] {
     const breadcrumbs: BreadcrumbItem[] = [];
     let url = '';
 
