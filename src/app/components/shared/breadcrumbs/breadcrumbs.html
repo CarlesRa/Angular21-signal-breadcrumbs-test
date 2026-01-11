@@ -1,11 +1,15 @@
 <nav aria-label="Breadcrumb" class="breadcrumbs">
   <ol>
     <li>
-      <a routerLink="/">Home</a>
+      <a routerLink="/">
+        <svg si-icon="home" size="18" class="home-icon"></svg>
+      </a>
     </li>
     @for (crumb of breadcrumbs(); track $index; let last = $last) {
       <li>
-        <span class="separator">/</span>
+
+        <svg [si-icon]="separator()" size="16"></svg>
+
         @if (!last) {
           <a [routerLink]="crumb.url">{{ crumb.label }}</a>
         } @else {

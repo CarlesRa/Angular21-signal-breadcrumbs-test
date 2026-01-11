@@ -16,16 +16,32 @@ li {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  min-height: 1.5rem; 
+}
+
+.home-link {
+  display: flex;
+  align-items: center;
+  line-height: 0;
+}
+
+.home-icon {
+  flex-shrink: 0;
+  display: block;
 }
 
 .separator {
   color: #94a3b8;
+  flex-shrink: 0;
+  display: block;
 }
 
 a {
   text-decoration: none;
   color: #3b82f6;
   transition: color 0.2s;
+  display: flex;
+  align-items: center;
 }
 
 a:hover {
@@ -36,4 +52,6 @@ a:hover {
 .current {
   color: #64748b;
   font-weight: 500;
+  display: flex;
+  align-items: center;
 }
