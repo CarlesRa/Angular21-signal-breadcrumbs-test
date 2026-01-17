@@ -1,9 +1,9 @@
 .breadcrumbs {
   padding: 1rem 0;  
-  --breadcrumb-link-color: #3b82f6;
-  --breadcrumb-separator-color: #94a3b8;
-  --breadcrumb-current-color: #64748b;
-  --breadcrumb-hover-color: #2563eb;
+  --breadcrumb-link-color: #374151;
+  --breadcrumb-separator-color: #9ca3af;
+  --breadcrumb-current-color: #6b7280;
+  --breadcrumb-hover-color: #111827;
 }
 
 ol {

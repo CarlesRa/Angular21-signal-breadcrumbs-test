@@ -1,6 +1,6 @@
 import { computed, inject, Injectable } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
-import { ActivatedRouteSnapshot, NavigationEnd, Router } from '@angular/router';
+import { ActivatedRouteSnapshot, NavigationEnd, Params, Router } from '@angular/router';
 import { filter } from 'rxjs';
 
 export type BreadcrumbLabel =
@@ -10,6 +10,7 @@ export type BreadcrumbLabel =
 export interface BreadcrumbItem {
   label: string;
   url: string;
+  queryParams: Params;
 }
 
 const BREADCRUMB_KEY = 'breadcrumb';
@@ -27,7 +28,7 @@ const BREADCRUMB_KEY = 'breadcrumb';
 })
 export class BreadcrumbService {
 
-  /** Angular Router instance injected via signals. */
+  /** Angular Router instance injected */
   private readonly router = inject(Router);
 
   /**
@@ -86,7 +87,11 @@ export class BreadcrumbService {
             ? breadcrumb(currentRoute)
             : breadcrumb;
 
-        breadcrumbs.push({ label, url });
+        breadcrumbs.push({ 
+          label, 
+          url: url || '/',
+          queryParams: currentRoute.queryParams,
+        });
       }
     }
 
