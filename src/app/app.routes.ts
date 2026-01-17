@@ -14,7 +14,6 @@ export const routes: Routes = [
       {
         title: 'Products',
         path: 'products',
-        loadComponent: () => import('./components/shared/empty-box/empty-box').then(mod => mod.EmptyBox),
         data: {
           breadcrumb: 'Products'
         },
@@ -28,8 +27,7 @@ export const routes: Routes = [
           },
           {
             title: 'Laptops',
-            path: 'laptops',
-            loadComponent: () => import('./components/shared/empty-box/empty-box').then(mod => mod.EmptyBox),
+            path: 'laptops',            
             data: {
               breadcrumb: 'Laptops'
             }, children: [
